@@ -7,11 +7,11 @@ var entities = new Entities();
 
 var request = require('sync-request');
 
-
-function getHTMLResponseBody(cacheKey, url) {
+function getHTMLResponseBody(cacheKey, path) {
     var cache = assetCache.get(cacheKey);
     if (Object.isEmpty(cache)) {
-      var html = entities.decode(request('GET', url).getBody().toString('utf8'));
+      var host = 'https://assets.sky.com';
+      var html = entities.decode(request('GET', host + path).getBody().toString('utf8'));
       assetCache.set(cacheKey, html);
       cache = assetCache.get(cacheKey);
     }
@@ -20,16 +20,16 @@ function getHTMLResponseBody(cacheKey, url) {
 
 module.exports = {
   header: function() {
-    return getHTMLResponseBody('assetsHeader', 'https://assets.sky.com/masthead/mysky/');
+    return getHTMLResponseBody('assetsHeader', '/masthead/mysky/');
   },
   footer: function() {
-    return getHTMLResponseBody('assetsFooter', 'https://assets.sky.com/footer/');
+    return getHTMLResponseBody('assetsFooter', '/footer/');
   },
   styles: function() {
-    return getHTMLResponseBody('assetsStyles', 'https://assets.sky.com/resources/css/');
+    return getHTMLResponseBody('assetsStyles', '/resources/css/');
   },
   scripts: function() {
-    return getHTMLResponseBody('assetsScripts', 'https://assets.sky.com/resources/js/');
+    return getHTMLResponseBody('assetsScripts', '/resources/js/');
   }
 }
 
