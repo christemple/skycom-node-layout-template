@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        #{ print skyAssets.styles() }
+        <link rel="stylesheet" href="//web-toolkit.global.sky.com/2.3.6/stylesheets/toolkit.css"/>
+        <link rel="stylesheet" href="//web-toolkit.global.sky.com/2.3.6/fonts/skycons.min.css"/>
+    </head>
+    <body>
+        #{ print skyAssets.header() }
+
+        <div class="skycom-container">
+          #{ raw body }
+        </div>
+
+        #{ print skyAssets.footer()  }
+        #{ print skyAssets.scripts() }
+        <script src='//web-toolkit.global.sky.com/2.3.6/scripts/toolkit.min.js'></script>
+    </body>
+</html>

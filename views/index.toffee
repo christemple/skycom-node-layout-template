@@ -1,0 +1,6 @@
+<div class="skycom-12">
+  <h1 class="section-title">Sky Template</h1>
+  <p class="intro">
+    Pulling down assets and caching the response body is pretty is in Node JS!
+  </p>
+</div>
